@@ -1,11 +1,14 @@
 package org.example.KotLearn_sprint_1
 
+const val secondsInHour: Short = 3600
+const val secondsInMinute: Short = 60
+
 fun main() {
     val totalSeconds: Short = 6480
-    val hours: Int = totalSeconds / 3600
-    val remainSecondsWidthHourse: Int = totalSeconds % 3600
-    val minutes: Int = remainSecondsWidthHourse / 60
-    val seconds: Int = remainSecondsWidthHourse % 60
+    val hours: Int = totalSeconds / secondsInHour
+    val remaingSeconds: Int = totalSeconds % secondsInHour
+    val minutes: Int = remaingSeconds / secondsInMinute
+    val seconds: Int = remaingSeconds % secondsInMinute
 
     print("%02d:%02d:%02d".format(hours, minutes, seconds))
 }
