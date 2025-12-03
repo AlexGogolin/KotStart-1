@@ -1,7 +1,7 @@
 package org.example.KotLearn_sprint_1
 
 const val secondsInHour: Short = 3600
-const val secondsInMinute: Short = 60
+const val secondsInMinute: Byte = 60
 
 fun main() {
     val totalSeconds: Short = 6480
