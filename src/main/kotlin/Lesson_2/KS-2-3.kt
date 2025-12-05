@@ -10,8 +10,8 @@ fun main() {
     val timeOfWayInMinutes = 457
     val arrivalTotalMinutes = startTrainInMinutes + timeOfWayInMinutes
     val remainingMinutes = arrivalTotalMinutes % (HOURS_IN_DAY * MINUTES_IN_HOUR)
-    val finishTimeInHour = remainingMinutes / 60
-    val finishTimeInMinutes = remainingMinutes % 60
+    val finishTimeInHour = remainingMinutes / MINUTES_IN_HOUR
+    val finishTimeInMinutes = remainingMinutes % MINUTES_IN_HOUR
 
     println("%02d:%02d".format(finishTimeInHour, finishTimeInMinutes))
 }
