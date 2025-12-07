@@ -2,9 +2,11 @@ package org.example.Lesson_3
 
 fun main() {
     val turn = "D2-D4;0"
-    val turnStart = turn.substring(0..1)
-    val turnFinish = turn.substring(3..4)
-    val turnNumber = turn[6]
+    val partsOfString = turn.split('-', ';')
+
+    val turnStart = partsOfString[0]
+    val turnFinish = partsOfString[1]
+    val turnNumber = partsOfString[2]
 
     println(turnStart)
     println(turnFinish)
