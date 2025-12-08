@@ -1,11 +1,15 @@
 package org.example.Lesson_4
 
+const val SUN_WEATHER: Boolean = true
+const val OPEN_TENT: Boolean = true
+const val HUMIDITY: Int = 20
+const val WRONG_SEASON = "зима"
 fun main() {
-    val sunWeather: Boolean = true
-    val openTent: Boolean = true
-    val humidity: Int = 20
+    val weatherSun: Boolean = true
+    val tentIsOpen: Boolean = true
+    val whatHumidity: Int = 20
     val season = "зима"
-    val favorableСonditions: Boolean = sunWeather && openTent && (humidity == 20) && (season != "зима")
+    val favorableСonditions: Boolean = (SUN_WEATHER == weatherSun) && (OPEN_TENT == tentIsOpen) && (HUMIDITY == whatHumidity) && (season != WRONG_SEASON)
 
     println("“Благоприятные ли условия сейчас для роста бобовых? $favorableСonditions")
 }
