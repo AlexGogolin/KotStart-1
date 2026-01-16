@@ -3,9 +3,9 @@ package org.example.Lesson_4
 fun main() {
     val hands = 1
     val legs = 0
-    val day = 2
-    val dayOfHands: Boolean = (day % 2) == hands
-    val dayOfLegs: Boolean = (day % 2) == legs
+    val dayOfTraining = 5
+    val dayOfHands: Boolean = (dayOfTraining % 2) == hands
+    val dayOfLegs: Boolean = (dayOfTraining % 2) == legs
 
     println(
         """
