@@ -9,11 +9,15 @@ fun main(){
     println("Напишите второе число:")
     val secondNumber = readln().toInt()
 
-    if((NUMBER_ONE + NUMBER_TWO) == (firstNumber + secondNumber))
+
+    val correctNumberOne = (NUMBER_ONE == firstNumber) || (NUMBER_TWO == firstNumber)
+    val correctNumberTwo = (NUMBER_ONE == secondNumber) || (NUMBER_TWO == secondNumber)
+    val doubleCorrect = correctNumberOne && correctNumberTwo
+    val singleCorrect = correctNumberOne || correctNumberTwo
+
+    if(doubleCorrect)
         println("“Поздравляем! Вы выиграли главный приз!")
-    else if ((NUMBER_ONE == firstNumber) || NUMBER_ONE == secondNumber)
-        println("Вы выиграли утешительный приз!")
-    else if ((NUMBER_TWO == firstNumber) || NUMBER_TWO == secondNumber)
+    else if (singleCorrect)
         println("Вы выиграли утешительный приз!")
     else
         println("Неудача!")
