@@ -9,7 +9,7 @@ fun main(){
     val seconds = userSeconds
 
     while(userSeconds > 0){
-            println("Осталось секунд: ${userSeconds--}")
+            userSeconds--
             Thread.sleep(1000)
     }
     println("Прошло $seconds секунд")
