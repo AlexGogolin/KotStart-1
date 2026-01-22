@@ -1,16 +1,13 @@
 package org.example.Lesson_6
 
-
-fun main(){
+const val MILISECONDS_IN_SECOND = 1000
+fun main() {
     System.setOut(java.io.PrintStream(System.`out`, true, "UTF-8"))
 
     print("Введите количество секунд:")
-    var userSeconds = readln().toInt()
-    val seconds = userSeconds
+    var userSeconds = readln().toLong()
+    val miliSeconds = userSeconds * MILISECONDS_IN_SECOND
 
-    while(userSeconds > 0){
-            userSeconds--
-            Thread.sleep(1000)
-    }
-    println("Прошло $seconds секунд")
+    Thread.sleep(miliSeconds)
+    println("Прошло секунд: $userSeconds")
 }
