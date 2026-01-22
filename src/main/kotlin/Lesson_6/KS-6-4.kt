@@ -16,8 +16,7 @@ fun main(){
             println("Это была великолепная игра! Вы угадали за $attempt попыток ")
             return
         }else{
-            turn--
-            println("Неверно, попыток осталось $turn")
+            println("Неверно, попыток осталось ${turn--}")
             attempt++
         }
     }while(turn > 0)
