@@ -1,6 +1,6 @@
 package org.example.Lesson_8
 
-fun main(){
+fun main() {
     System.setOut(java.io.PrintStream(System.`out`, true, "UTF-8"))
 
     val arrayOfIngridients = arrayOf("мясо", "свекла", "томат", "соль", "перец", "капуста", "лук", "морковь").toList()
