@@ -1,7 +1,6 @@
 package org.example.Lesson_9
 
 fun main() {
-    System.setOut(java.io.PrintStream(System.`out`, true, "UTF-8"))
 
     val listOfIngredients = listOf(2, 50, 15)
     println("Сколько порций вы хотели бы приготовить?")
