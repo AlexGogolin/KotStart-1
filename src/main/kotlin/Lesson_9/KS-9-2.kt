@@ -2,7 +2,6 @@ package org.example.Lesson_9
 
 const val USER_AGREE = "Да"
 fun main() {
-    System.setOut(java.io.PrintStream(System.`out`, true, "UTF-8"))
 
     val baseIngredients = mutableListOf("мясо", "картофель", "грибы")
     println("В рецепте есть базовые ингредиенты:$baseIngredients")
