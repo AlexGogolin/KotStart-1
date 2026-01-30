@@ -14,8 +14,8 @@ fun main() {
             println("Ошибка! $userAnswer уже есть в списке. Ваш список сейчас $listOfIngredients")
         }
     }
-
-    val filteredListOfUserIngredients = listOfIngredients.sorted().joinToString(", ").replaceFirstChar { it.uppercase() }
+    val filteredListOfUserIngredients = mutableSetOf<String>()
+    filteredListOfUserIngredients.add(listOfIngredients.sorted().joinToString(", ").replaceFirstChar { it.uppercase() })
     println(filteredListOfUserIngredients)
 }
 
