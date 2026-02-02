@@ -6,13 +6,12 @@ fun main() {
     do {
         val login = userLogin()
         val password = userPassword()
-        val isValid = userLoginAndPass(login, password)
-        if (isValid) {
+        if (isInputValid(login, password)) {
             println("Вы авторизованы! Ваш логин: $login , пароль: $password")
         } else {
             println("Логин или пароль недостаточно длинные, придумайте другие")
         }
-    } while (!isValid)
+    } while (!isInputValid(login, password))
 }
 
 fun userLogin(): String {
@@ -25,6 +24,4 @@ fun userPassword(): String {
     return readln()
 }
 
-fun userLoginAndPass(login: String, password: String): Boolean {
-    return login.length >= 4 || password.length >= 4
-}
+fun isInputValid(login: String, password: String) = login.length >= 4 && password.length >= 4
