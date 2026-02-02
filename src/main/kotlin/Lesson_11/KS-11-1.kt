@@ -5,7 +5,7 @@ fun main() {
     val user1 = User(
         id = 1,
         login = "Alberto",
-        password = "123456",
+        password = "1234567",
         email = "alberto@mail.com",
     )
 
