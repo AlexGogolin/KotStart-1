@@ -5,16 +5,11 @@ fun main() {
 
     var computerResult = 0
     var manResult = 0
-    var turn = 1
 
-    while (turn <= 6) {
-        if (turn % 2 == 0) {
-            computerResult += rollDice()
-        } else {
-            manResult += rollDice()
-        }
-        turn++
-    }
+    computerResult += rollDice()
+    println("Ход компьютера, результат: $computerResult")
+    manResult += rollDice()
+    println("Ход игрока, результат: $manResult")
 
     if (computerResult > manResult) {
         println("Компьютер победил со счетом $computerResult : $manResult")
