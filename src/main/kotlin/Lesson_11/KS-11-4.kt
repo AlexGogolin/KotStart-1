@@ -11,9 +11,8 @@ class CategoryOfDish(
     val imageUrl: String,
     val dishTitle: String,
     val dishDescription: String,
-) {
-
-}
+    val listOfeReceptsInCategory: List<Recept>,
+)
 
 class Recept(
     val idOfRecept: Int,
