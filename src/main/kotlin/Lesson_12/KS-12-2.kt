@@ -5,14 +5,11 @@ import java.io.PrintStream
 fun main() {
     System.setOut(PrintStream(System.`out`, true, "UTF-8"))
 
-    val mondeyWeather = AnotherWeatherInfo(24, 16, true)
+    val mondeyWeather = AnotherWeatherInfo1(24, 16, true)
     mondeyWeather.weatherForecast()
 }
 
-class AnotherWeatherInfo(_daytimeTemperature: Int, _nighttemperature: Int, _precipitation: Boolean) {
-    var daytimeTemperature: Int = _daytimeTemperature
-    var nightTemperature: Int = _nighttemperature
-    var precipitation: Boolean = _precipitation
+class AnotherWeatherInfo1(var daytimeTemperature: Int, var nightTemperature: Int, var precipitation: Boolean) {
 
     fun weatherForecast() {
         if (!precipitation) {
