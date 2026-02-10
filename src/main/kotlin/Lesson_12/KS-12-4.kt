@@ -2,7 +2,6 @@ package org.example.Lesson_12
 
 import java.io.PrintStream
 
-const val KELVIN_TO_CELSIUS_DIFFERENCE = 273
 fun main() {
     System.setOut(PrintStream(System.`out`, true, "UTF-8"))
 
