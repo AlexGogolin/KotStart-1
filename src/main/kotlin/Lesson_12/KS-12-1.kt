@@ -26,7 +26,7 @@ class WeatherInfo() {
         if (!precipitation) {
             println("Дневная температура составляет $daytimeTemperature, ночная $nightTemperature, осадки не ожидаются")
         } else {
-            println("Дневная температура составляет $daytimeTemperature, ночная $nightTemperature, ожидаются осадки, захватите зонт! ")
+            println("Дневная температура составляет $daytimeTemperature, ночная $nightTemperature, ожидаются осадки, захватите зонт!")
         }
     }
 }
