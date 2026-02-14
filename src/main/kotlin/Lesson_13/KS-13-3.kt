@@ -1,9 +1,8 @@
 package org.example.Lesson_13
 
-
 import java.io.PrintStream
 
-fun main(){
+fun main() {
     System.setOut(PrintStream(System.`out`, true, "UTF-8"))
 
     val phoneBook = listOf(
@@ -12,15 +11,10 @@ fun main(){
         AnotherUserStorage2("Jack", 85456588L, "Yandex"),
         AnotherUserStorage2("Patrick", 82156228L, "null"),
         AnotherUserStorage2("Anna", 88761256L),
-        )
+    )
 
-    val listOfCompany = phoneBook.map{ it.company }.filterNotNull()
+    val listOfCompany = phoneBook.mapNotNull { it.company }
     println(listOfCompany)
 }
 
-class AnotherUserStorage2(
-    val name: String,
-    val phoneNumber: Long,
-    val company: String? = null
-){
-}
+class AnotherUserStorage2(val name: String, val phoneNumber: Long, val company: String? = null)
