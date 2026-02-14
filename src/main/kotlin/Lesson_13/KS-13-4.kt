@@ -24,10 +24,8 @@ fun main() {
             println("Вы не ввели номер телефона, учетная запись не будет добавлена, попробуйте еще раз!")
         }
     }
-
     println("-- Итоговый список контактов --")
     phoneBook.forEach { it.userInfo() }
-
 }
 
 class AnotherUserStorage3(
@@ -36,7 +34,7 @@ class AnotherUserStorage3(
     val company: String? = null
 ) {
     fun userInfo() {
-        println("Контакт: \nИмя пользователя:$name\nНомер телефона:$phoneNumber\nМесто работы:$company")
+        println("\nКонтакт: \nИмя пользователя:$name\nНомер телефона:$phoneNumber\nМесто работы:$company")
     }
 }
 
