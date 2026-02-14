@@ -34,7 +34,7 @@ class AnotherUserStorage3(
     val company: String? = null
 ) {
     fun userInfo() {
-        println("\nКонтакт: \nИмя пользователя:$name\nНомер телефона:$phoneNumber\nМесто работы:$company")
+        println("\nКонтакт: \nИмя пользователя: $name\nНомер телефона: $phoneNumber\nМесто работы: $company")
     }
 }
 
