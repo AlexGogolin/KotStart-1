@@ -23,6 +23,4 @@ class AnotherUserStorage4(
     val name: String,
     val userPhoneNumber: Long? = null,
     val company: String? = null
-) {
-
-}
+)
