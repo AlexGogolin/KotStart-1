@@ -21,15 +21,17 @@ open class Ship(
     open val loadCapacity: Int,
     open val numberOfPassengers: Int,
     var isIceBreaker: Boolean = false,
-){
+) {
     fun shipDetails() {
-        println("""
+        println(
+            """
             Корабль: $name
             Скорость: $speed узлов
             Грузоподъемность: $loadCapacity
             Пассажиров: $numberOfPassengers
             Колет лед: ${if (isIceBreaker) "Да" else "Нет"}
-        """.trimIndent())
+        """.trimIndent()
+        )
     }
 }
 
@@ -48,7 +50,7 @@ class IceBreakerShip(
     name: String,
     baseSpeed: Int,
     baseCapacity: Int,
-) : Ship(name, baseSpeed, baseCapacity, 0, isIceBreaker = true){
+) : Ship(name, baseSpeed, baseCapacity, 0, isIceBreaker = true) {
     override val speed = baseSpeed / 2
     override val loadCapacity = baseCapacity / 2
 }
@@ -59,7 +61,7 @@ class CruiseShip(
     speed: Int,
     loadCapacity: Int,
     numberOfPassengers: Int,
-) : Ship(name, speed, loadCapacity, numberOfPassengers){
+) : Ship(name, speed, loadCapacity, numberOfPassengers) {
 
     override val numberOfPassengers = numberOfPassengers * 3
 }
