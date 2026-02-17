@@ -36,7 +36,8 @@ open class Ship2(
         )
         println()
     }
-    open fun shipLoading(){
+
+    open fun shipLoading() {
         shipLoad = ""
     }
 }
@@ -50,9 +51,10 @@ class CargoShip2(
 
     override val speed = baseSpeed / 3
     override val loadCapacity = baseCapacity * 3
-    override fun shipLoading(){
+    override fun shipLoading() {
         shipLoad = "Активирую погрузочный кран"
     }
+
     init {
         shipLoading()
     }
@@ -65,9 +67,10 @@ class IceBreakerShip2(
 ) : Ship2(name, baseSpeed, baseCapacity, 0, isIceBreaker = true) {
     override val speed = baseSpeed / 2
     override val loadCapacity = baseCapacity / 2
-    override fun shipLoading(){
+    override fun shipLoading() {
         shipLoad = "Открываю ворота со стороны кормы"
     }
+
     init {
         shipLoading()
     }
@@ -81,9 +84,10 @@ class CruiseShip2(
     numberOfPassengers: Int,
 ) : Ship2(name, speed, loadCapacity, numberOfPassengers) {
     override val numberOfPassengers = numberOfPassengers * 3
-    override fun shipLoading(){
+    override fun shipLoading() {
         shipLoad = "Выдвигаю горизонтальный трап со шкафута"
     }
+
     init {
         shipLoading()
     }
