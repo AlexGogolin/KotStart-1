@@ -9,10 +9,12 @@ fun main() {
     val ship2 = IceBreakerShip2("Ледокол", 150, 150)
     val ship3 = CruiseShip2("Круизный лайнер", 150, 150, 150)
 
+    ship1.howShipLoad()
     ship1.shipDetails()
+    ship2.howShipLoad()
     ship2.shipDetails()
+    ship3.howShipLoad()
     ship3.shipDetails()
-
 }
 
 open class Ship2(
@@ -23,6 +25,10 @@ open class Ship2(
     var isIceBreaker: Boolean = false,
     open var shipLoad: String = "",
 ) {
+    open fun howShipLoad() {
+        shipLoad = ""
+    }
+
     fun shipDetails() {
         println(
             """
@@ -36,10 +42,6 @@ open class Ship2(
         )
         println()
     }
-
-    open fun shipLoading() {
-        shipLoad = ""
-    }
 }
 
 
@@ -47,16 +49,9 @@ class CargoShip2(
     name: String,
     baseSpeed: Int,
     baseCapacity: Int,
-) : Ship2(name, baseSpeed, baseCapacity, 0) {
-
-    override val speed = baseSpeed / 3
-    override val loadCapacity = baseCapacity * 3
-    override fun shipLoading() {
+) : Ship2(name, speed = baseSpeed / 2, loadCapacity = baseCapacity * 15, 0) {
+    override fun howShipLoad() {
         shipLoad = "Активирую погрузочный кран"
-    }
-
-    init {
-        shipLoading()
     }
 }
 
@@ -64,15 +59,9 @@ class IceBreakerShip2(
     name: String,
     baseSpeed: Int,
     baseCapacity: Int,
-) : Ship2(name, baseSpeed, baseCapacity, 0, isIceBreaker = true) {
-    override val speed = baseSpeed / 2
-    override val loadCapacity = baseCapacity / 2
-    override fun shipLoading() {
+) : Ship2(name, speed = baseSpeed / 2, loadCapacity = baseCapacity / 2, 0, isIceBreaker = true) {
+    override fun howShipLoad() {
         shipLoad = "Открываю ворота со стороны кормы"
-    }
-
-    init {
-        shipLoading()
     }
 }
 
@@ -82,13 +71,8 @@ class CruiseShip2(
     speed: Int,
     loadCapacity: Int,
     numberOfPassengers: Int,
-) : Ship2(name, speed, loadCapacity, numberOfPassengers) {
-    override val numberOfPassengers = numberOfPassengers * 3
-    override fun shipLoading() {
+) : Ship2(name, speed, loadCapacity, numberOfPassengers = numberOfPassengers * 3) {
+    override fun howShipLoad() {
         shipLoad = "Выдвигаю горизонтальный трап со шкафута"
-    }
-
-    init {
-        shipLoading()
     }
 }
