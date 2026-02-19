@@ -35,7 +35,7 @@ class Chat(
         grouped.forEach { (rootId, messages) ->
             messages.forEach { msg ->
                 if (msg is ChildMessage) {
-                    print("\t") // Делаем отступ
+                    print("\t")
                 }
                 println("${msg.authorName} ${msg.messageId} : ${msg.message}")
             }
