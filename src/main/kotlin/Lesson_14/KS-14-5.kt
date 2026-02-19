@@ -30,7 +30,7 @@ class Chat(
         messageList.add(ChildMessage(currentId, author, text, parentMessageId))
     }
 
-    fun printChat(){
+    fun printChat() {
         val grouped = messageList.groupBy { it.parentId ?: it.messageId }
         grouped.forEach { (rootId, messages) ->
             messages.forEach { msg ->
@@ -56,4 +56,4 @@ class ChildMessage(
     authorName: String,
     message: String,
     override val parentId: Int,
-) : Message(messageId, authorName, message, parentId,)
+) : Message(messageId, authorName, message, parentId)
