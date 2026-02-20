@@ -9,7 +9,8 @@ fun main() {
     val lastId = chat.messageList.last().messageId
     chat.addThreadMessage("Tom", "hey", lastId)
     chat.addMessage("Buba", "Any text")
-    chat.addThreadMessage("Robin", "Hi", lastId)
+    val lastId2 = chat.messageList.last().messageId
+    chat.addThreadMessage("Robin", "Hi", lastId2)
     chat.addThreadMessage("Bork", "hey all", lastId)
 
     chat.printChat()
@@ -31,7 +32,13 @@ class Chat(
     }
 
     fun printChat() {
-        val grouped = messageList.groupBy { it.parentId ?: it.messageId }
+        val grouped = messageList.groupBy { msg ->
+            if(msg is ChildMessage) {
+                msg.parentId
+            }else{
+                msg.messageId
+            }
+        }
         grouped.forEach { (rootId, messages) ->
             messages.forEach { msg ->
                 if (msg is ChildMessage) {
@@ -48,12 +55,11 @@ open class Message(
     var messageId: Int,
     val authorName: String,
     val message: String,
-    open val parentId: Int? = null
 )
 
 class ChildMessage(
-    messageId: Int,         // Свой ID
+    messageId: Int,
     authorName: String,
     message: String,
-    override val parentId: Int,
-) : Message(messageId, authorName, message, parentId)
+    val parentId: Int,
+) : Message(messageId, authorName, message)
