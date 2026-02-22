@@ -18,42 +18,35 @@ fun main() {
 
 class Fish(
     val name: String,
-) : CanMoveInWater {
-    fun howMove(){
-        println("$name передвигается: ${moveInWater()},")
+) : Waterfowl {
+    fun howMove() {
+        println("$name ${moveInWater()}")
     }
 }
 
 class Bird(
     val name: String,
-) : CanMoveOnWater, CanMoveInSky, CanMoveOnLand {
-    fun howMove(){
-        println("$name передвигается: ${moveOnWater()}, ${moveInSky()}, ${moveInLand()}")
+) : Flyable {
+    fun howMove() {
+        println("$name ${moveOnSky()} ")
     }
 
 }
 
 class WaterBird(
     val name: String,
-) : CanMoveOnWater, CanMoveInWater, CanMoveInSky, CanMoveOnLand {
-    fun howMove(){
-        println("$name передвигается: ${moveOnWater()}, ${moveInSky()}, ${moveInLand()} и ${moveInWater()}")
+) : Flyable, Waterfowl {
+    fun howMove() {
+        println("$name ${moveOnSky()} и ${moveInWater()}")
     }
 }
 
 
-interface CanMoveOnWater {
-    fun moveOnWater() = "по воде"
+interface Flyable {
+    fun moveOnSky() = "летает"
 }
 
-interface CanMoveInWater {
-    fun moveInWater() = "в воде"
+interface Waterfowl {
+    fun moveInWater() = "плавает"
 }
 
-interface CanMoveInSky {
-    fun moveInSky()= "по ввоздуху"
-}
-
-interface CanMoveOnLand {
-    fun moveInLand()= "по суше"
-}
