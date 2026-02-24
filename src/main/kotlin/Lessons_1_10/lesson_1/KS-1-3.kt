@@ -1,16 +1,10 @@
 package org.example.Lessons_1_10.lesson_1
 
+import java.io.PrintStream
+
 fun main() {
-    val year: Int = 1961
-    var hour: String = "09"
-    var minute: String = "07"
+    System.setOut(PrintStream(System.`out`, true, "UTF-8"))
 
-    println(year)
-    println(hour)
-    println(minute)
 
-    hour = "10"
-    minute = "55"
 
-    print("$hour:$minute")
 }
