@@ -44,7 +44,7 @@ class CargoCar(type: String) : Cars(type), CargoLoading, PassengerLoading, Movab
 
 class Sedan(
     type: String,
-) : Cars(type), PassengerLoading,Movable {
+) : Cars(type), PassengerLoading, Movable {
     override var passengersCount: Int = 0
     override val maxPassengers: Int = 3
     override val currentCargo: Int? = null
@@ -80,10 +80,10 @@ interface Movable {
     val currentCargo: Int?
     val currentPassengers: Int
     val currentType: String
-    fun movie(){
-        if (currentCargo != null){
+    fun movie() {
+        if (currentCargo != null) {
             println("Автомобиль $currentType начал движение, его загрузка $currentCargo килограмм грузов? пассажиров: $currentPassengers")
-        }else{
+        } else {
             println("Автомобиль $currentType начал движение, везет $currentPassengers пассажиров без груза")
         }
     }
