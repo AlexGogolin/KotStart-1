@@ -12,7 +12,7 @@ fun main() {
     )
 
     inventory.forEach { item ->
-        println(" Товар ${item.nameOfProduct} , остаток на складе ${item.quantityInStorage}")
+        println(" Товар ${item.nameOfProduct} , остаток на складе ${item.quantityInStorage} шт.")
         if (item is Search) {
             item.searching(item.nameOfProduct)
         }
