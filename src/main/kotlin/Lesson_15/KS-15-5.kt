@@ -21,11 +21,11 @@ fun main() {
     car2.loadPassengers(3)
     car3.loadPassengers(2)
 
-    car1.movie()
+    allCars.filterIsInstance<Movable>().forEach { it.movie() }
+
     totalCargo()
     totalPassengers()
     println("На данный момент автомобили перевозят ${totalCargo()} килограмм грузов и ${totalPassengers()} пассажиров")
-
 }
 
 open class Cars(
@@ -82,7 +82,7 @@ interface Movable {
     val currentType: String
     fun movie() {
         if (currentCargo != null) {
-            println("Автомобиль $currentType начал движение, его загрузка $currentCargo килограмм грузов? пассажиров: $currentPassengers")
+            println("Автомобиль $currentType начал движение, его загрузка $currentCargo килограмм грузов и пассажиров: $currentPassengers")
         } else {
             println("Автомобиль $currentType начал движение, везет $currentPassengers пассажиров без груза")
         }
