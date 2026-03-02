@@ -1,4 +1,5 @@
 package org.example.Lesson_16
+
 import kotlin.math.pow
 
 const val PI: Double = 3.14
@@ -14,7 +15,6 @@ fun main() {
 class Circle(
     private val radius: Int,
 ) {
-
     fun calculatePerimeter(): Double {
         return 2 * PI * radius
     }
