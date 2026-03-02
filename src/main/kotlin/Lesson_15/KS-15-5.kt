@@ -1,7 +1,6 @@
 package org.example.Lesson_15
 
 import java.io.PrintStream
-import javax.naming.Name
 import kotlin.Int
 
 fun main() {
@@ -10,7 +9,7 @@ fun main() {
     val car1 = CargoCar("Грузовик")
     val car2 = Sedan("Легковушка")
     val car3 = Sedan("Легковушка")
-    val allCars: MutableList<Cars> = mutableListOf(car1, car2, car3)
+    val allCars: MutableList<Movable> = mutableListOf(car1, car2, car3)
 
     fun totalCargo() = allCars.filterIsInstance<CargoLoading>().sumOf { it.cargoCount }
     fun totalPassengers() = allCars.filterIsInstance<PassengerLoading>().sumOf { it.passengersCount }
@@ -21,35 +20,30 @@ fun main() {
     car2.loadPassengers(3)
     car3.loadPassengers(2)
 
-    allCars.filterIsInstance<Movable>().forEach { it.movie() }
-
-    totalCargo()
-    totalPassengers()
+    allCars.forEach { it.move() }
     println("На данный момент автомобили перевозят ${totalCargo()} килограмм грузов и ${totalPassengers()} пассажиров")
 }
 
-open class Cars(
-    val type: String,
-)
-
-class CargoCar(type: String) : Cars(type), CargoLoading, PassengerLoading, Movable {
+class CargoCar(
+    val type: String
+) : CargoLoading, PassengerLoading, Movable {
     override var passengersCount: Int = 0
     override val maxPassengers: Int = 1
     override var cargoCount: Int = 0
     override val maxCargoLoad: Int = 2000
-    override val currentCargo: Int? get() = cargoCount
-    override val currentPassengers: Int get() = passengersCount
-    override val currentType: String get() = type
+    override fun move() {
+        println("Автомобиль $type начал движение, везет $cargoCount кг груза и $passengersCount пасс.")
+    }
 }
 
 class Sedan(
-    type: String,
-) : Cars(type), PassengerLoading, Movable {
+    val type: String,
+) : PassengerLoading, Movable {
     override var passengersCount: Int = 0
     override val maxPassengers: Int = 3
-    override val currentCargo: Int? = null
-    override val currentPassengers: Int get() = passengersCount
-    override val currentType: String get() = type
+    override fun move() {
+        println("Автомобиль $type начал движение, везет $passengersCount пассажиров без груза.")
+    }
 }
 
 interface CargoLoading {
@@ -77,14 +71,5 @@ interface PassengerLoading {
 }
 
 interface Movable {
-    val currentCargo: Int?
-    val currentPassengers: Int
-    val currentType: String
-    fun movie() {
-        if (currentCargo != null) {
-            println("Автомобиль $currentType начал движение, его загрузка $currentCargo килограмм грузов и пассажиров: $currentPassengers")
-        } else {
-            println("Автомобиль $currentType начал движение, везет $currentPassengers пассажиров без груза")
-        }
-    }
+    fun move()
 }
