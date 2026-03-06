@@ -17,14 +17,14 @@ fun main() {
 class Quiz(
     val questionPrimary: String,
     val answerPrimary: String,
-){
+) {
     var question: String = questionPrimary
         get() = field
 
     var answer: String = answerPrimary
         get() = field
-        set(value){
-            field = "Ответ на вопрос изменен на: $value"
+        set(value) {
+            field = value
         }
 
 }
