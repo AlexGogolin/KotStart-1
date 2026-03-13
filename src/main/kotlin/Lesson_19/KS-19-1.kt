@@ -4,7 +4,12 @@ fun main() {
 
     println("В аквариум вы можете добавить следующие виды рыб:")
     FishSpecies.entries.forEach { i ->
-        println(i.name)
+        when (i) {
+            FishSpecies.GUPPY -> println("Гуппи")
+            FishSpecies.GOLDFISH -> println("Золотая рыбка")
+            FishSpecies.ANGELFISH -> println("Скалярия")
+            FishSpecies.SIAMESE_FIGHTING_FISH -> println("Петушок")
+        }
     }
 
 }
