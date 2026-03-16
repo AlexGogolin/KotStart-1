@@ -11,6 +11,7 @@ fun main() {
     destroyer.shoot()
 
 }
+
 enum class Ammo(val damage: Int) {
     BLUE(5),
     GREEN(10),
@@ -19,16 +20,17 @@ enum class Ammo(val damage: Int) {
 
 class Tank(
     var currentAmmo: Ammo? = null,
-){
+) {
 
     fun reload(ammo: Ammo) {
         currentAmmo = ammo
     }
-    fun shoot(){
+
+    fun shoot() {
         val ammo = currentAmmo
-        if(ammo == null){
+        if (ammo == null) {
             println("Так не заряжен")
-        }else{
+        } else {
             println("Урон нанесен в размере ${ammo.damage}")
         }
     }
