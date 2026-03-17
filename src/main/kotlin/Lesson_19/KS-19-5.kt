@@ -1,9 +1,6 @@
 package org.example.Lesson_19
 
-import java.io.PrintStream
-
 fun main() {
-    System.setOut(PrintStream(System.`out`, true, "UTF-8"))
 
     val people = mutableListOf<Human>()
     var counter = 1
@@ -15,9 +12,9 @@ fun main() {
         println("теперь пол: \"Мужской\" или \"Женский\"")
         val genderInput = readln()
 
-        val gender = when (genderInput) {
-            "Мужской" -> Gender.MALE
-            "Женский" -> Gender.FEMALE
+        val gender = when (genderInput.uppercase()) {
+            "МУЖСКОЙ" -> Gender.MALE
+            "ЖЕНСКИЙ" -> Gender.FEMALE
             else -> {
                 println("Ошибка! Неверный пол. Попробуем еще раз для этого человека.")
                 continue
