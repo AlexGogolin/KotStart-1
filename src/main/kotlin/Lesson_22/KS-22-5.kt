@@ -7,8 +7,9 @@ fun main() {
         "12 октября 1979 года",
         4.4
     )
-    val (name, description, date, distance) = alphaCentauri
-    println("Ожидаемое событие: $name \nЦель события: $description \nВремя проведения: $date \nРасстояние до события: $distance")
+
+    println("Ожидаемое событие: ${alphaCentauri.component1()} \nЦель события: ${alphaCentauri.component2()} " +
+            "\nВремя проведения: ${alphaCentauri.component3()} \nРасстояние до события: ${alphaCentauri.component4()} световых года")
 }
 
 data class GalacticGuide(
